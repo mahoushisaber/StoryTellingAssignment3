@@ -2000,12 +2000,52 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
       propertyPath: sounds.Array.data[0].loop
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: OpenPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 033c3604b5fc64b44b995bcf38ec0389, type: 3}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f573f369987191e46a34fa846bdaa82f, type: 3}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: ClosePage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6df862d72fe870f41be6e98ea7960a0c, type: 3}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869983104958895620, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4869983104958895621, guid: 88d9673ecf407de45a0b346be469c7c9, type: 3}
       propertyPath: m_Name
