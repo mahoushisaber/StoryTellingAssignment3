@@ -6,5 +6,6 @@ using UnityEngine;
 public class Interactable : ScriptableObject
 {
     public Sprite image;
-    public string text;
+    public string story;
+    public string objectName;
 }
