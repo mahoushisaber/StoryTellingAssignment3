@@ -20,11 +20,10 @@ public class Priest : MonoBehaviour
     private RaycastHit rayHit;
     private Ray ray;
     public float rayHitDistance=5;
-
-    // interacting with objects
-    [SerializeField]
     private GameObject[] interactables;
-    private GameObject investigatingObj;
+    private GameObject targetObj;
+
+    [SerializeField]
     private int investigate;
     private int hitLive;
     private int delayClearTimer;
@@ -32,6 +31,9 @@ public class Priest : MonoBehaviour
     // mouse cursors
     private GameObject crossHairIcon;
     private GameObject eyeIcon;
+
+    // story stuff
+    private StoryPopup storyPopup;
 
     // story stage
     private int stage;
@@ -48,7 +50,7 @@ public class Priest : MonoBehaviour
             rayHitDistance = 5.0f;
         }
 
-        investigatingObj = null;
+        targetObj = null;
 
         investigate = 0;
         hitLive = 0;
@@ -57,6 +59,7 @@ public class Priest : MonoBehaviour
         crossHairIcon = canvas.GetComponent<Transform>().Find("Crosshair").gameObject;
         eyeIcon = canvas.GetComponent<Transform>().Find("Eye").gameObject;
 
+        storyPopup = canvas.transform.Find("Popup").GetComponent<StoryPopup>();
         stage = 0;
         UpdateInteractables();
     }
@@ -81,9 +84,9 @@ public class Priest : MonoBehaviour
     void Update()
     {
         GetMouseOverInteractable();
-        if (Input.GetMouseButtonDown(0) && investigatingObj)
+        if (Input.GetMouseButtonDown(0) && targetObj)
         {
-            Investigate(investigatingObj);
+            Investigate(targetObj);
         }
     }
 
@@ -102,7 +105,7 @@ public class Priest : MonoBehaviour
         {
             // check if we still on the same obj
             // save time from looping
-            if (rayHit.transform.gameObject == investigatingObj)
+            if (rayHit.transform.gameObject == targetObj)
             {
                 return;
             }
@@ -112,15 +115,15 @@ public class Priest : MonoBehaviour
             {
                 if (rayHit.transform.gameObject == obj)
                 {
-                    investigatingObj = obj;
+                    targetObj = obj;
                     ToggleInvestigateCursor(true);
                     return;
                 }
             }
-            investigatingObj = null;
+            targetObj = null;
             ToggleInvestigateCursor(false);
         }
-        investigatingObj = null;
+        targetObj = null;
         ToggleInvestigateCursor(false);
     }
 
@@ -145,9 +148,11 @@ public class Priest : MonoBehaviour
     /// <param name="obj"></param>
     private void Investigate(GameObject obj)
     {
+        storyPopup.Open();
         stage++;
         UpdateInteractables();
     }
+
 
     void OldUpdate() {
 
@@ -217,16 +222,19 @@ public class Priest : MonoBehaviour
         Vector3 translate = transform.right * x + transform.forward * z;
         body.MovePosition(transform.position + translate);
 
-        // mouse movement
-        float xMouse = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        float yMouse = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
+        if (!storyPopup.IsInvestigating)
+        {
+            // mouse movement
+            float xMouse = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
+            float yMouse = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
 
-        // look sideway
-        transform.Rotate(Vector3.up * xMouse);
+            // look sideway
+            transform.Rotate(Vector3.up * xMouse);
 
-        // look up down
-        curXRotation -= yMouse;
-        curXRotation = Mathf.Clamp(curXRotation, -90, 90);
-        cam.transform.localRotation = Quaternion.Euler(curXRotation, 0f, 0f);
+            // look up down
+            curXRotation -= yMouse;
+            curXRotation = Mathf.Clamp(curXRotation, -90, 90);
+            cam.transform.localRotation = Quaternion.Euler(curXRotation, 0f, 0f);
+        }
     }
 }
