@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactables
+  - Stage0
+  - Stage1
+  - Stage2
+  - Stage3
   layers:
   - Default
   - TransparentFX
