@@ -34,9 +34,11 @@ public class Priest : MonoBehaviour
 
     // story stuff
     private StoryPopup storyPopup;
+    public GameObject cutscene;
 
     // story stage
     private int stage;
+    private const int MAX_STAGE = 3;
 
     void Start()
     {
@@ -83,10 +85,13 @@ public class Priest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetMouseOverInteractable();
-        if (Input.GetMouseButtonDown(0) && targetObj)
+        if (!storyPopup.IsInvestigating)
         {
-            Investigate(targetObj);
+            GetMouseOverInteractable();
+            if (Input.GetMouseButtonDown(0) && targetObj)
+            {
+                Investigate(targetObj);
+            }
         }
     }
 
@@ -148,8 +153,13 @@ public class Priest : MonoBehaviour
     /// <param name="obj"></param>
     private void Investigate(GameObject obj)
     {
-        storyPopup.Open();
-        stage++;
+        storyPopup.Open(obj);
+        if (stage + 1 <= MAX_STAGE) stage++;
+
+        if (stage == MAX_STAGE)
+        {
+            cutscene.SetActive(true);
+        }
         UpdateInteractables();
     }
 
@@ -216,14 +226,14 @@ public class Priest : MonoBehaviour
     // make for smooth movements due to the fixed interval
     void FixedUpdate()
     {
-        // keyboard movement
-        float x = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
-        float z = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-        Vector3 translate = transform.right * x + transform.forward * z;
-        body.MovePosition(transform.position + translate);
-
         if (!storyPopup.IsInvestigating)
         {
+            // keyboard movement
+            float x = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+            float z = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+            Vector3 translate = transform.right * x + transform.forward * z;
+            body.MovePosition(transform.position + translate);
+
             // mouse movement
             float xMouse = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
             float yMouse = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
