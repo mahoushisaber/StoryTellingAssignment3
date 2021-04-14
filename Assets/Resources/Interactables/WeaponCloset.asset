@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b30a60cde3521d4e8d3d89ea06da5b5, type: 3}
+  m_Name: WeaponCloset
+  m_EditorClassIdentifier: 
+  items:
+  - image: {fileID: 21300000, guid: f43b6738a73cea9498cb196552dfbc21, type: 3}
+    story: 
+    itemName: Sword
+  - image: {fileID: 21300000, guid: 04be6f7c8f73a424c9c0725d77f65655, type: 3}
+    story: 
+    itemName: Axe
+  - image: {fileID: 21300000, guid: 56cf397ad9462b34786ffa79597a7212, type: 3}
+    story: 
+    itemName: Morning Star
+  - image: {fileID: 21300000, guid: d9803362864ef5a40baaf6204116cd1c, type: 3}
+    story: 
+    itemName: Bottle
+  - image: {fileID: 21300000, guid: 1d2849906eff1944688fbfa6d4762b37, type: 3}
+    story: 
+    itemName: Vials
