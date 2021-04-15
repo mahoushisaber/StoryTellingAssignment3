@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WoodenChest
   m_EditorClassIdentifier: 
   items:
-  - image: {fileID: 21300000, guid: 7ec2e966765be5846a56a0b1372e63f9, type: 3}
+  - image: {fileID: 21300000, guid: 684d193d5d9873244a3780cd02cdb7e9, type: 3}
     story: This is an old letter.
     itemName: Letter
     itemID: 1
