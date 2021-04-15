@@ -9,6 +9,7 @@ TagManager:
   - Stage1
   - Stage2
   - Stage3
+  - StoryPopupButton
   layers:
   - Default
   - TransparentFX

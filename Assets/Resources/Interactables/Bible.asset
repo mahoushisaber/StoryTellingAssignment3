@@ -16,3 +16,4 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 1090b9615fe07d7438e8496865d88b99, type: 3}
     story: This is a bible
     itemName: Bible
+    itemID: 0

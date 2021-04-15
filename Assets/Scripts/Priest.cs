@@ -158,7 +158,7 @@ public class Priest : MonoBehaviour
 
         if (stage == MAX_STAGE)
         {
-            cutscene.SetActive(true);
+//            cutscene.SetActive(true);
         }
         UpdateInteractables();
     }

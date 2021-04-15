@@ -14,4 +14,5 @@ public struct Item
     public Sprite image;
     public string story;
     public string itemName;
+    public int itemID;
 }
