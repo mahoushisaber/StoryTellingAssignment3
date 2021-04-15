@@ -16,3 +16,4 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: dc9d1bb8fc840c04ba20e391b1e6da6f, type: 3}
     story: 
     itemName: Monk Robe
+    itemID: 2

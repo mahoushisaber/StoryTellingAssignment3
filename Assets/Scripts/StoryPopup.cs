@@ -61,6 +61,6 @@ public class StoryPopup : MonoBehaviour
         // A little fuggly here as the InteractableID inverst because of the Grid Layout Group
         // attached to the Interactable area. It turns out that as you add items it inverts
         // the Interactable ID. Its okay now that it is unsderstood we just simply invert it back.
-        StoryPresentaionScript.Open(currInteractable.items.Count - InteractableID);
+        StoryPresentaionScript.Open(currInteractable.items[InteractableID]);
     }
 }

@@ -12,30 +12,26 @@ public class StoryPopUpMgr : MonoBehaviour
 
 
     // When called it uses the story ID passed in to select on of the 
-    public void Open(int InteractableID, int StoryItemID)
+    public void Open(Item interactableItem, int StoryItemID)
     {
         StoryTextTMPro.text = "No story availalbe for this selection";
 
-        // Check that we actually have the interactable item added and valid index range
-        if (InteractableID < InteractableItems.Count)
+        // Valid so lets set up the text box based on the items passed in
+        switch (StoryItemID)
         {
-            // Valid so lets set up the text box based on the items passed in
-            switch (StoryItemID)
-            {
-                case 1:
-                    StoryTextTMPro.text = InteractableItems[InteractableID].StoryItem1;
-                    break;
-                case 2:
-                    StoryTextTMPro.text = InteractableItems[InteractableID].StoryItem2;
-                    break;
-                case 3:
-                    StoryTextTMPro.text = InteractableItems[InteractableID].StoryItem3;
-                    break;
-            }
-
-            // Assign the image for this interactable
-            StoryItemImage.sprite = InteractableItems[InteractableID].Image;
+            case 1:
+                StoryTextTMPro.text = InteractableItems[interactableItem.itemID].StoryItem1;
+                break;
+            case 2:
+                StoryTextTMPro.text = InteractableItems[interactableItem.itemID].StoryItem2;
+                break;
+            case 3:
+                StoryTextTMPro.text = InteractableItems[interactableItem.itemID].StoryItem3;
+                break;
         }
+
+        // Assign the image for this interactable
+        StoryItemImage.sprite = interactableItem.image;
 
         this.gameObject.SetActive(true);
     }
@@ -54,7 +50,6 @@ public class StoryPopUpMgr : MonoBehaviour
 public struct InteractableStoryItem
 {
     public string InteractableName;
-    public Sprite Image;
     public string StoryItem1;
     public string StoryItem2;
     public string StoryItem3;

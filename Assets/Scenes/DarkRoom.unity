@@ -2243,47 +2243,38 @@ MonoBehaviour:
   StoryItemImage: {fileID: 1248645894}
   InteractableItems:
   - InteractableName: Bible
-    Image: {fileID: 21300000, guid: 1090b9615fe07d7438e8496865d88b99, type: 3}
     StoryItem1: 0.1
     StoryItem2: 0.2
     StoryItem3: 0.3
   - InteractableName: WoodneChest
-    Image: {fileID: 21300000, guid: 7ec2e966765be5846a56a0b1372e63f9, type: 3}
     StoryItem1: 1.1
     StoryItem2: 1.2
     StoryItem3: 1.3
   - InteractableName: Habit
-    Image: {fileID: 21300000, guid: dc9d1bb8fc840c04ba20e391b1e6da6f, type: 3}
     StoryItem1: 2.1
     StoryItem2: 2.2
     StoryItem3: 2.3
   - InteractableName: PrayerKneeler
-    Image: {fileID: 0}
     StoryItem1: 3.1
     StoryItem2: 3.2
     StoryItem3: 3.3
   - InteractableName: Sword
-    Image: {fileID: 21300000, guid: f43b6738a73cea9498cb196552dfbc21, type: 3}
     StoryItem1: 4.1
     StoryItem2: 4.2
     StoryItem3: 4.3
   - InteractableName: Axe
-    Image: {fileID: 21300000, guid: 04be6f7c8f73a424c9c0725d77f65655, type: 3}
     StoryItem1: 5.1
     StoryItem2: 5.2
     StoryItem3: 5.3
   - InteractableName: Morning Star
-    Image: {fileID: 21300000, guid: 56cf397ad9462b34786ffa79597a7212, type: 3}
     StoryItem1: 6.1
     StoryItem2: 6.2
     StoryItem3: 6.3
   - InteractableName: Bottle
-    Image: {fileID: 21300000, guid: d9803362864ef5a40baaf6204116cd1c, type: 3}
     StoryItem1: 7.1
     StoryItem2: 7.2
     StoryItem3: 7.3
   - InteractableName: Vials
-    Image: {fileID: 21300000, guid: 1d2849906eff1944688fbfa6d4762b37, type: 3}
     StoryItem1: 8.1
     StoryItem2: 8.2
     StoryItem3: 8.3
@@ -3478,7 +3469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 397.02554, y: -424.984}
+  m_AnchoredPosition: {x: 397.0254, y: -424.98438}
   m_SizeDelta: {x: 794.0511, y: 216.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &797167025
@@ -3690,7 +3681,7 @@ GameObject:
   - component: {fileID: 810932685}
   - component: {fileID: 810932684}
   m_Layer: 5
-  m_Name: OpenStoryBtn_2
+  m_Name: OpenStoryBtn_1
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3765,7 +3756,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3917,7 +3908,7 @@ GameObject:
   - component: {fileID: 834341143}
   - component: {fileID: 834341142}
   m_Layer: 5
-  m_Name: OpenStoryBtn_5
+  m_Name: OpenStoryBtn_4
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3992,7 +3983,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4048,7 +4039,7 @@ GameObject:
   - component: {fileID: 856943731}
   - component: {fileID: 856943730}
   m_Layer: 5
-  m_Name: OpenStoryBtn_6
+  m_Name: OpenStoryBtn_5
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4123,7 +4114,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5108,7 +5099,7 @@ GameObject:
   - component: {fileID: 1226203263}
   - component: {fileID: 1226203262}
   m_Layer: 5
-  m_Name: OpenStoryBtn_4
+  m_Name: OpenStoryBtn_3
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5183,7 +5174,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5509,7 +5500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 397.02554, y: -108.328}
+  m_AnchoredPosition: {x: 397.0254, y: -108.328125}
   m_SizeDelta: {x: 794.0511, y: 216.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1299000923
@@ -5661,7 +5652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1191.0767, y: -424.984}
+  m_AnchoredPosition: {x: 1191.0767, y: -424.98438}
   m_SizeDelta: {x: 794.0511, y: 216.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1341534390
@@ -6102,7 +6093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.049079254, y: 0.06403698}
   m_AnchorMax: {x: 0.48288533, y: 0.92744446}
-  m_AnchoredPosition: {x: 385.64, y: -47.414}
+  m_AnchoredPosition: {x: 385.63916, y: -47.414062}
   m_SizeDelta: {x: 771.27045, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509598859
@@ -7562,7 +7553,7 @@ GameObject:
   - component: {fileID: 1828564528}
   - component: {fileID: 1828564527}
   m_Layer: 5
-  m_Name: OpenStoryBtn_1
+  m_Name: OpenStoryBtn_0
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7637,7 +7628,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7715,7 +7706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1191.0767, y: -108.328}
+  m_AnchoredPosition: {x: 1191.0767, y: -108.328125}
   m_SizeDelta: {x: 794.0511, y: 216.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1857347274 stripped
@@ -8263,7 +8254,7 @@ GameObject:
   - component: {fileID: 2084617883}
   - component: {fileID: 2084617882}
   m_Layer: 5
-  m_Name: OpenStoryBtn_3
+  m_Name: OpenStoryBtn_2
   m_TagString: StoryPopupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8338,7 +8329,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

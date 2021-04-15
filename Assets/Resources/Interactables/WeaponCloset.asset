@@ -16,15 +16,20 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: f43b6738a73cea9498cb196552dfbc21, type: 3}
     story: 
     itemName: Sword
+    itemID: 4
   - image: {fileID: 21300000, guid: 04be6f7c8f73a424c9c0725d77f65655, type: 3}
     story: 
     itemName: Axe
+    itemID: 5
   - image: {fileID: 21300000, guid: 56cf397ad9462b34786ffa79597a7212, type: 3}
     story: 
     itemName: Morning Star
+    itemID: 6
   - image: {fileID: 21300000, guid: d9803362864ef5a40baaf6204116cd1c, type: 3}
     story: 
     itemName: Bottle
+    itemID: 7
   - image: {fileID: 21300000, guid: 1d2849906eff1944688fbfa6d4762b37, type: 3}
     story: 
     itemName: Vials
+    itemID: 8

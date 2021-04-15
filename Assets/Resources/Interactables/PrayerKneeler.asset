@@ -16,3 +16,8 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 0ab9c9e8eacef354a8a44875e9449c5a, type: 3}
     story: 
     itemName: Prayer Kneeler
+    itemID: 3
+  - image: {fileID: 21300000, guid: 1090b9615fe07d7438e8496865d88b99, type: 3}
+    story: 
+    itemName: Bible
+    itemID: 0

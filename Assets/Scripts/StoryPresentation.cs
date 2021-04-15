@@ -7,9 +7,9 @@ public class StoryPresentation : MonoBehaviour
     private GameObject m_SelectPopUp;
     private GameObject m_StoryPopup;
     private StoryPopUpMgr m_StoryPopUpMgr;
-    private int m_InteractableID;
+    private Item m_InteractableItem;
 
-    public void Open(int InteractableID)
+    public void Open(Item interactableItem)
     {
         // Get the Find SelectPopup object so we can change the GameObject active state
         m_SelectPopUp = this.GetComponent<Transform>().Find("SelectPopup").gameObject;
@@ -20,7 +20,7 @@ public class StoryPresentation : MonoBehaviour
         m_StoryPopUpMgr = m_StoryPopup.GetComponent<StoryPopUpMgr>();
 
         // Don't forget to record the InteractiveID for later use to pass along to story
-        m_InteractableID = InteractableID;
+        m_InteractableItem = interactableItem;
 
         // All done so show the activate the game object and as the hieracy is setup this
         // will show over the last window and is what we want.
@@ -38,6 +38,6 @@ public class StoryPresentation : MonoBehaviour
         // Based on the story item clicked it will pass in the StoryItemID it is
         // associated with and we pass that on as an argument to the story popup
         // for proper story diplay.
-        m_StoryPopUpMgr.Open(m_InteractableID, StoryItemID);
+        m_StoryPopUpMgr.Open(m_InteractableItem, StoryItemID);
     }
 }
