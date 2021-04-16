@@ -10,6 +10,7 @@ TagManager:
   - Stage2
   - Stage3
   - StoryPopupButton
+  - EndingPopupButton
   layers:
   - Default
   - TransparentFX

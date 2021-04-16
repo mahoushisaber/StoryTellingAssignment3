@@ -16,12 +16,12 @@ MonoBehaviour:
   - image: {fileID: 0}
     story: Ending 1
     itemName: Ending 1
-    itemID: 10
+    itemID: 9
   - image: {fileID: 0}
     story: Ending 2
     itemName: Ending 1
-    itemID: 11
+    itemID: 10
   - image: {fileID: 0}
     story: Ending 3
     itemName: Ending 1
-    itemID: 12
+    itemID: 11
