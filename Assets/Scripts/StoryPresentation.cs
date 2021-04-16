@@ -1,15 +1,24 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class StoryItemClickedEventArgs : EventArgs
+{
+}
+
 public class StoryPresentation : MonoBehaviour
 {
+    public bool StoryVisited;
+
     private GameObject m_SelectPopUp;
     private GameObject m_SelectEndingPopUp;
     private GameObject m_StoryPopup;
     private StoryPopUpMgr m_StoryPopUpMgr;
     private Item m_InteractableItem;
     private GameObject m_CurrSelectPopup;
+
+    // event handler
+    public event EventHandler<StoryItemClickedEventArgs> StoryItemClicked;
 
     public void Open(Item interactableItem)
     {
@@ -50,5 +59,7 @@ public class StoryPresentation : MonoBehaviour
         // associated with and we pass that on as an argument to the story popup
         // for proper story diplay.
         m_StoryPopUpMgr.Open(m_InteractableItem, StoryItemID);
+        var args = new StoryItemClickedEventArgs();
+        StoryItemClicked?.Invoke(this, args);
     }
 }

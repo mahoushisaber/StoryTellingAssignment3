@@ -485,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableArea: {fileID: 1509598857}
+  priest: {fileID: 1789302918}
 --- !u!1001 &68460668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1221,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8d9bd0f7e3a4e014e9472c6b4b1c1ea4, type: 3}
       propertyPath: m_TagString
-      value: Stage3
+      value: Stage4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9bd0f7e3a4e014e9472c6b4b1c1ea4, type: 3}
@@ -1411,7 +1412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6251a1c16e398e746b8c8d91a27545f5, type: 3}
       propertyPath: m_TagString
-      value: Stage2
+      value: Stage3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6251a1c16e398e746b8c8d91a27545f5, type: 3}
@@ -7287,6 +7288,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369362567}
   m_CullTransparentMesh: 0
+--- !u!1 &1405302491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1405302492}
+  m_Layer: 0
+  m_Name: Endings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1405302492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405302491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.837914, y: -2.2836108, z: 0.7077129}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415261573
 GameObject:
   m_ObjectHideFlags: 0
@@ -9251,7 +9282,6 @@ MonoBehaviour:
   cam: {fileID: 881739057}
   canvas: {fileID: 867548121}
   rayHitDistance: 0
-  investigate: 0
   cutscene: {fileID: 946434907}
 --- !u!1001 &1791457914
 PrefabInstance:
@@ -9378,6 +9408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7c615bc49847441895c1191dd8a4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoryVisited: 0
 --- !u!1 &1815372916
 GameObject:
   m_ObjectHideFlags: 0

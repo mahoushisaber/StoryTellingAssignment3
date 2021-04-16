@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +9,33 @@ public class StoryPopup : MonoBehaviour
     // UI
     public GameObject interactableArea;
 
+    public Priest priest;
+
+    private static Dictionary<string, bool> CheckedStage;
+
     public bool IsInvestigating
     {
         get; private set;
     }
 
+    private Dictionary<string, bool> GetCheckedStage()
+    {
+        if (CheckedStage == null)
+        {
+            CheckedStage = new Dictionary<string, bool>() 
+            {
+                { "Bible", false},
+                { "WoodenChest", false},
+                { "Monk_Robes", false},
+                { "PrayerKneeler", false},
+                { "WeaponCloset", false}
+            };
+        }
+        return CheckedStage;
+    }
+
     private Interactable currInteractable;
+    private string currInteractableName;
 
     /// <summary>
     /// Open the StoryPopup
@@ -26,6 +48,7 @@ public class StoryPopup : MonoBehaviour
         // load the object into each premade UI
         Interactable interactable = Resources.Load<Interactable>("Interactables/" + obj.name);
         currInteractable = interactable;
+        currInteractableName = obj.name;
 
         for (int i = 0; i < interactable.items.Count; i++)
         {
@@ -52,15 +75,30 @@ public class StoryPopup : MonoBehaviour
         gameObject.SetActive(false);
         IsInvestigating = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        Dictionary<string, bool> checkedStage = GetCheckedStage();
+        if (checkedStage[currInteractableName])
+        {
+            priest.IncrementStage();
+        }
     }
 
     public void OnInteractableSelected(int InteractableID)
     {
-        StoryPresentation StoryPresentaionScript = GameObject.FindObjectOfType<StoryPresentation>();
+        StoryPresentation StoryPresentationScript = FindObjectOfType<StoryPresentation>();
 
         // A little fuggly here as the InteractableID inverst because of the Grid Layout Group
         // attached to the Interactable area. It turns out that as you add items it inverts
         // the Interactable ID. Its okay now that it is unsderstood we just simply invert it back.
-        StoryPresentaionScript.Open(currInteractable.items[InteractableID]);
+        StoryPresentationScript.Open(currInteractable.items[InteractableID]);
+
+        // register the callback
+        StoryPresentationScript.StoryItemClicked += OnStoryItemClickedHandler;
+    }
+
+    private void OnStoryItemClickedHandler(object src, StoryItemClickedEventArgs args)
+    {
+        Dictionary<string, bool> checkedStage = GetCheckedStage();
+        checkedStage[currInteractableName] = true;
     }
 }

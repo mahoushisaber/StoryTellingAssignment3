@@ -19,14 +19,9 @@ public class Priest : MonoBehaviour
     // for interacting with scene
     private RaycastHit rayHit;
     private Ray ray;
-    public float rayHitDistance=5;
+    public float rayHitDistance=3;
     private GameObject[] interactables;
     private GameObject targetObj;
-
-    [SerializeField]
-    private int investigate;
-    private int hitLive;
-    private int delayClearTimer;
 
     // mouse cursors
     private GameObject crossHairIcon;
@@ -38,7 +33,9 @@ public class Priest : MonoBehaviour
 
     // story stage
     private int stage;
-    private const int MAX_STAGE = 3;
+    private const int LAST_INTERACTABLE_STAGE = 4;
+    private const int ENDING_STAGE = 5;
+    private GameObject endingObject;
 
     void Start()
     {
@@ -53,17 +50,13 @@ public class Priest : MonoBehaviour
         }
 
         targetObj = null;
-
-        investigate = 0;
-        hitLive = 0;
-        delayClearTimer = 0;
-
         crossHairIcon = canvas.GetComponent<Transform>().Find("Crosshair").gameObject;
         eyeIcon = canvas.GetComponent<Transform>().Find("Eye").gameObject;
 
         storyPopup = canvas.transform.Find("Popup").GetComponent<StoryPopup>();
         stage = 0;
         UpdateInteractables();
+        endingObject = GameObject.Find("Endings");
     }
 
     /// <summary>
@@ -154,73 +147,24 @@ public class Priest : MonoBehaviour
     private void Investigate(GameObject obj)
     {
         storyPopup.Open(obj);
-        if (stage + 1 <= MAX_STAGE) stage++;
-
-        if (stage == MAX_STAGE)
-        {
-//            cutscene.SetActive(true);
-        }
-        UpdateInteractables();
     }
 
+    public void IncrementStage()
+    {
+        stage++;
+        if (stage == LAST_INTERACTABLE_STAGE)
+        {
+            cutscene.SetActive(true);
+        }
+        else if (stage == ENDING_STAGE)
+        {
+            Investigate(endingObject);
+        }
 
-    void OldUpdate() {
-
-
-        //int lastHitLive = hitLive;
-
-        //switch (rayHit.transform.gameObject.name)
-        //    {
-        //    case "WoodenChest_Hit_1":
-        //        hitLive = 1;
-        //        break;
-
-        //    case "Bible_Hit_2":
-        //        hitLive = 2;
-        //        break;
-
-        //    case "Monk_Robes_Hit_3":
-        //        hitLive = 3;
-        //        break;
-
-        //    default:
-        //        hitLive = 0;
-        //        break;
-        //}
-
-        //if (lastHitLive != hitLive)
-        //{
-        //    if (hitLive == 0)
-        //    {
-        //        eyeIcon.SetActive(false);
-        //        crossHairIcon.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        eyeIcon.SetActive(true);
-        //        crossHairIcon.SetActive(false);
-        //    }
-        //    print(rayHit.transform.gameObject.name + " -- " + hitLive);
-        //}
-
-        //if (hitLive != 0 && Input.GetMouseButtonDown(0))
-        //{
-        //    investigate = hitLive;
-        //    delayClearTimer = 0;
-        //}
-        //else
-        //{
-        //    // get rid of this after debugging and replace the investigate with proper message dispatch method to the handler!
-        //    if (delayClearTimer >= 200)
-        //    {
-        //        delayClearTimer = 0;
-        //        investigate = 0;
-        //    }
-        //    else
-        //    {
-        //        delayClearTimer += 1;
-        //    }
-        //}
+        if (stage <= LAST_INTERACTABLE_STAGE)
+        {
+            UpdateInteractables();
+        }
     }
 
     // make for smooth movements due to the fixed interval
